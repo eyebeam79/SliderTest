@@ -9,15 +9,25 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *sliderValue;
 
 @end
 
 @implementation ViewController
+- (IBAction)changeSlider:(id)sender
+{
+    UISlider *slider = (UISlider *)sender;
+    
+    self.sliderValue.text = [NSString stringWithFormat:@"Value: %f", slider.value];
+
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
